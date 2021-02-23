@@ -13,36 +13,46 @@ Below we briefly describe short instructions for using the software.
 Instructions
 -------------
 ### Downloading the package
-`PASTRY` supports Fortran and R.
-
-#### Using Fortran,
-In order to download `PASTRY`, you can clone this repository via the commands. Also, when you use R, you can download it from Bioconductor.
+`PASTRY` supports Fortran, Python and R.
+In order to download `PASTRY`, you can clone this repository via the commands.
 
 ```
 $ git clone https://github.com/hanlab-SNU/PASTRY.git
 $ cd PASTRY
 ```
 
+### Executing the codes
+
+#### Using Fortran,
+```
+# You can give the path for n studies input (if it is not the same folder) and 
+$ chmod +x run_pastry.sh
+$ ./run_pastry.sh -n N 
+  ( + optional arguments : -i "input path" / -o "output path and prefix" / -m "maf prefix" )
+```
+
 #### Using R,
-To install the bioconductor `PASTRY` package, type the following in an R command window:
 
 ```
-## Install Bioconductor core packages
-> if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-> BiocManager::install(c("PASTRY"))
-> library(PASTRY)
+$ cd R
+## Simulation
+$ Rscript PASTRY_sim.R # (Default mode simulation will operated. If you want to change parameter, check '-h' option. ex. $ Rscript PASTRY_sim.R -h)
+
+## Analysis (with sample data)
+$ Rscript PASTRY.R -i ../sample_data/test -m ../sample_data/ -o ../sample_data/result -n 3 -s 100 -e 100 -l 100
 ```
 
-### Installing required dependencies
-If you are using Fortran, make sure [gfortran](https://gcc.gnu.org/wiki/GFortranBinaries) is installed.
-Also, you need [lapack](http://www.netlib.org/lapack/) package for Fortran 90.
+#### Using Python,
 
 ```
-# You can use 'yum, brew, dnf' instead of 'apt-get' according to each linux version / Mac OS
-$ sudo apt-get install gcc gfortran libblas-dev liblapack-dev
-$ gfortran --version
+$ cd Python
+## Simulation
+$ python PASTRY_sim.py # (Default mode simulation will operated. If you want to change parameter, check '-h' option. ex. $ python PASTRY_sim.py -h)
+
+## Analysis (with sample data)
+$ python PASTRY.py -i ../sample_data/test -m ../sample_data/ -o ../sample_data/result -n 3 -s 100 -e 100 -l 100
 ```
+
 
 ### Input data format
 You need control, case frequency files(`casemaf.out`/`contmaf.out`) and easily processed n study files(`studyN.out`) for `PASTRY` input.
@@ -62,29 +72,6 @@ $  awk '{print $7,$8}' studyNname.assoc.logistic > studyN.out
 # You need plink frequency files for making maf files.
 $ awk '{print $5}' studyname.frq.cc > casemaf.out
 $ awk '{print $6}' studyname.frq.cc > contmaf.out
-```
-
-### Executing the codes
-
-#### Using Fortran,
-```
-# You can give the path for n studies input (if it is not the same folder) and 
-$ chmod +x run_pastry.sh
-$ ./run_pastry.sh -n N 
-  ( + optional arguments : -i "input path" / -o "output path and prefix" / -m "maf prefix" )
-```
-
-#### Using R,
-```
-# If all input files exists and you prefer to create the PASTRY output in R current working directory, 
-# you don't need to give the arguments except  for the study number n.
-
-> PASTRY(n=N, input="input_path", maf="", output="output_path&prefix")
-
-or
-
-> PASTRY(n=N) # All files in current working directory
-
 ```
 
 ### Output
