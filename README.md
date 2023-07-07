@@ -13,7 +13,7 @@ Below we briefly describe short instructions for using the software.
 Instructions
 -------------
 ### Downloading the package
-`PASTRY` supports Fortran, Python and R.
+`PASTRY` supports Python and R.
 In order to download `PASTRY`, you can clone this repository via the commands.
 
 ```
@@ -22,14 +22,6 @@ $ cd PASTRY
 ```
 
 ### Executing the codes
-
-#### Using Fortran,
-```
-# You can give the path for n studies input (if it is not the same folder) and 
-$ chmod +x run_pastry.sh
-$ ./run_pastry.sh -n N 
-  ( + optional arguments : -i "input path" / -o "output path and prefix" / -m "maf prefix" )
-```
 
 #### Using R,
 
@@ -79,11 +71,12 @@ You can get the z statistics for the LS and PASTRY method (`Zstat_LS_xxx.out` an
 
 License
 ---------
-This project is licensed under the terms of the XXXX license.
+This project is licensed under the terms of the GNU GPL v3 license. Any restriction to use by non-academics: license needed.
+
 
 Citation
 ----------
-If you use the software `PASTRY`, please cite [Kim et al. Achieving balanced power for detecting risk and protective alleles in meta-analysis of association studies with overlapping subjects. (under review) (2019)](www.)
+If you use the software `PASTRY`, please cite [Kim et al. Achieving balanced power for detecting risk and protective alleles in meta-analysis of association studies with overlapping subjects. (under review) (2023)](www.)
 
 Reference
 ------------
