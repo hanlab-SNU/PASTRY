@@ -8,8 +8,6 @@ To uncover the associated variants with small effects in Genome-wide association
 
 Below we briefly describe short instructions for using the software.
 
-#<!Diagram Figure>#
-
 Instructions
 -------------
 ### Downloading the package
