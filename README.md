@@ -82,4 +82,4 @@ Reference
 
 Support
 ----------
-This software was implemented by Emma E. Kim, Chloe Soohyun Jang and Buhm Han. Please contact [hanlab.snu@gmail.com](mailto:hanlab.snu@gmail.com)
+This software was implemented by Emma E. Kim, Chloe Soohyun Jang and Buhm Han. The packaging was done by Chloe Soohyung Jang. For inquiry, please contact Chloe Soohyung Jang.
